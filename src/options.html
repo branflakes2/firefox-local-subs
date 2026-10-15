@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Channel Feed for YouTube</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font: 15px/1.5 system-ui, sans-serif; max-width: 680px; margin: 32px auto; padding: 0 16px; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 17px; margin-top: 32px; }
+    p.hint { margin: 4px 0 12px; opacity: .7; font-size: 13px; }
+    textarea { width: 100%; box-sizing: border-box; min-height: 90px; padding: 8px; font: inherit; }
+    button { font: inherit; padding: 6px 14px; cursor: pointer; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    #channels li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #8884; }
+    #channels .name { flex: 1; font-weight: 500; }
+    #channels .id { font: 12px monospace; opacity: .6; }
+    #log li { font-size: 13px; padding: 2px 0; }
+    #log .ok { color: #2a8a3a; }
+    #log .err { color: #c0392b; }
+    label { display: block; margin: 8px 0; }
+    input[type=number] { width: 70px; }
+  </style>
+</head>
+<body>
+  <h1>Channel Feed for YouTube</h1>
+  <p class="hint">Your YouTube homepage shows only the latest videos from the channels below. No account needed.</p>
+
+  <h2>Add channels</h2>
+  <p class="hint">One per line: a <code>@handle</code>, a channel URL, or a channel ID (<code>UC…</code>).</p>
+  <textarea id="input" placeholder="@mkbhd&#10;https://www.youtube.com/@veritasium&#10;UCsXVk37bltHxD1rDPwtNM8Q"></textarea>
+  <p><button id="add">Add</button></p>
+  <ul id="log"></ul>
+
+  <div id="managedBox" hidden>
+    <h2>Managed by your system configuration</h2>
+    <ul id="managed"></ul>
+  </div>
+
+  <h2>Your channels (<span id="count">0</span>)</h2>
+  <ul id="channels"></ul>
+
+  <h2>Settings</h2>
+  <label>Videos per channel <input type="number" id="perChannel" min="1" max="30"></label>
+  <label>Max videos on the page <input type="number" id="maxTotal" min="1" max="300"></label>
+  <label><input type="checkbox" id="hideShorts"> Hide Shorts</label>
+  <label><input type="checkbox" id="hideSidebar"> Hide the sidebar on the homepage</label>
+
+  <script src="options.js"></script>
+</body>
+</html>

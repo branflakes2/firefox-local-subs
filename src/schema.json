@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "perChannel": {
+      "type": "integer"
+    },
+    "maxTotal": {
+      "type": "integer"
+    },
+    "hideShorts": {
+      "type": "boolean"
+    },
+    "hideSidebar": {
+      "type": "boolean"
+    }
+  }
+}

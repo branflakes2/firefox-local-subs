@@ -1,0 +1,7 @@
+keys:
+  - &global age1y6y95p3wrthf250un5uquv2hefdwdrny7km8pnkdmn2vkt629epswphq32
+creation_rules:
+  - path_regex: secrets/ff_api_keys.json
+    key_groups:
+      - age:
+        - *global
