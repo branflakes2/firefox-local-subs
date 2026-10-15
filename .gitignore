@@ -1,3 +1,4 @@
 # nix and direnv stuff
 result
 .direnv
+web-ext-artifacts
